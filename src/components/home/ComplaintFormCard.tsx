@@ -46,40 +46,40 @@ export const ComplaintFormCard = () => {
   };
 
   return (
-    <GlassCard className="h-full bg-white dark:bg-gradient-to-br dark:from-slate-800 dark:to-slate-900 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-shadow">
+    <GlassCard className="h-full bg-app-surface border border-app shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
           <FileText className="h-5 w-5 text-white" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-900 dark:bg-gradient-to-r dark:from-blue-400 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
+        <h3 className="text-lg font-semibold text-foreground">
           Complaint Form
         </h3>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+          <label className="text-sm font-medium text-muted-foreground mb-2 block">
             Full Name
           </label>
           <Input
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border-gray-300 dark:border-gray-600 dark:bg-slate-700 dark:text-white"
+            className="border-app dark:border-app dark:bg-app-surface dark:text-foreground"
           />
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+          <label className="text-sm font-medium text-muted-foreground mb-2 block">
             Language
           </label>
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
-            className="flex h-11 w-full rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-700 dark:text-white px-4 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:border-blue-500 transition-all duration-300"
+            className="flex h-11 w-full rounded border border-app bg-app-surface text-app-foreground px-4 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-app transition-all duration-300"
           >
             {languages.map((lang) => (
-              <option key={lang} value={lang} className="bg-white dark:bg-slate-700 text-foreground">
+              <option key={lang} value={lang} className="bg-app-surface dark:bg-app-surface text-foreground">
                 {lang}
               </option>
             ))}
@@ -87,14 +87,14 @@ export const ComplaintFormCard = () => {
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+          <label className="text-sm font-medium text-muted-foreground mb-2 block">
             Complaint Details
           </label>
           <Textarea
             placeholder="Describe your grievance in detail..."
             value={complaint}
             onChange={(e) => setComplaint(e.target.value)}
-            className="min-h-[100px] border-gray-300 dark:border-gray-600 dark:bg-slate-700 dark:text-white"
+            className="min-h-[100px] border-app dark:border-app dark:bg-app-surface dark:text-foreground"
           />
         </div>
 
@@ -109,7 +109,7 @@ export const ComplaintFormCard = () => {
           <Button
             variant="outline"
             onClick={handleClear}
-            className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700"
+            className="border-app dark:border-app text-muted-foreground dark:text-muted-foreground hover:bg-app-background/50 dark:hover:bg-app-surface/50"
           >
             <RotateCcw className="h-4 w-4" />
             Clear

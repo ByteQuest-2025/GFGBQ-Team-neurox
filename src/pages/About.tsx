@@ -46,7 +46,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:bg-gradient-to-r dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 dark:bg-clip-text dark:text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
               About NeuroX
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -62,8 +62,8 @@ const About = () => {
             className="max-w-4xl mx-auto mb-16"
           >
             <GlassCard glow className="text-center py-12">
-              <div className="w-20 h-20 bg-white dark:bg-white rounded-lg flex items-center justify-center mx-auto mb-6 border-2 border-white dark:border-white shadow-sm">
-                <Shield className="h-10 w-10 text-slate-900" />
+                <div className="w-20 h-20 bg-app-surface rounded-lg flex items-center justify-center mx-auto mb-6 border-2 border-app shadow-sm">
+                <Shield className="h-10 w-10 text-foreground" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Protecting Digital Trust in an AI-Generated World
@@ -87,8 +87,8 @@ const About = () => {
                 transition={{ delay: 0.1 * index }}
               >
                 <GlassCard className="h-full hover:border-primary/30 transition-all duration-300">
-                  <div className="p-3 rounded-lg bg-white dark:bg-white border-2 border-white dark:border-white w-fit mb-4 shadow-sm">
-                    <feature.icon className="h-6 w-6 text-slate-900" />
+                  <div className="p-3 rounded-lg bg-app-surface border-2 border-app w-fit mb-4 shadow-sm">
+                    <feature.icon className="h-6 w-6 text-app-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground text-sm">{feature.description}</p>

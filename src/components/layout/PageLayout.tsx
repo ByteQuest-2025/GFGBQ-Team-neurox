@@ -8,9 +8,9 @@ interface PageLayoutProps {
 
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900">
+    <div className="min-h-screen flex flex-col bg-app-background">
       <Navbar />
-      <main className="flex-1 pt-20 bg-white dark:bg-slate-900">
+      <main className="flex-1 pt-20 bg-app-background">
         {children}
       </main>
       <Footer />

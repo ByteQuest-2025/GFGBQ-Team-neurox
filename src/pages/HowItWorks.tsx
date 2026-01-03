@@ -46,7 +46,7 @@ const HowItWorks = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:bg-gradient-to-r dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 dark:bg-clip-text dark:text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
               How It Works
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -71,8 +71,8 @@ const HowItWorks = () => {
                   <div className="flex gap-6">
                     {/* Step Number */}
                     <div className="relative z-10">
-                      <div className="w-16 h-16 rounded-lg bg-white dark:bg-white flex items-center justify-center shadow-sm border-2 border-white dark:border-white">
-                        <step.icon className="h-7 w-7 text-slate-900" />
+                      <div className="w-16 h-16 rounded-lg bg-app-surface flex items-center justify-center shadow-sm border-2 border-app">
+                        <step.icon className="h-7 w-7 text-foreground" />
                       </div>
                     </div>
 

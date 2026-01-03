@@ -40,12 +40,12 @@ export const MediaAnalysisCard = () => {
   };
 
   return (
-    <GlassCard className="h-full bg-white dark:bg-gradient-to-br dark:from-slate-800 dark:to-slate-900 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-shadow">
+    <GlassCard className="h-full bg-app-surface border border-app shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-shadow">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2 rounded-lg bg-gradient-to-br from-orange-500 to-red-500">
           <Scan className="h-5 w-5 text-white" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-900 dark:bg-gradient-to-r dark:from-orange-400 dark:to-red-400 dark:bg-clip-text dark:text-transparent">
+        <h3 className="text-lg font-semibold text-foreground">
           AI Media Analysis
         </h3>
       </div>
@@ -55,7 +55,7 @@ export const MediaAnalysisCard = () => {
           isDragging
             ? "border-orange-500 bg-orange-50 dark:bg-orange-500/10"
             : status === "idle"
-            ? "border-gray-300 dark:border-gray-600 hover:border-orange-500 dark:hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-500/5"
+            ? "border-app hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-500/5"
             : "border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-500/5"
         }`}
         onDragOver={(e) => {

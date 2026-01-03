@@ -89,17 +89,17 @@ const Analyze = () => {
 
   return (
     <PageLayout>
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-800">
+      <section className="py-20 bg-app-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:bg-gradient-to-r dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 dark:bg-clip-text dark:text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
               AI Media Analysis
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Upload any media file for comprehensive deepfake detection and authenticity verification.
             </p>
           </motion.div>
@@ -107,8 +107,8 @@ const Analyze = () => {
           <div className="max-w-4xl mx-auto">
             <GlassCard glow className="mb-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2.5 rounded-lg bg-white dark:bg-white border-2 border-white dark:border-white shadow-sm">
-                  <Brain className="h-6 w-6 text-slate-900" />
+                <div className="p-2.5 rounded-lg bg-app-surface border-2 border-app shadow-sm">
+                  <Brain className="h-6 w-6 text-app-foreground" />
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold">NeuroX Scan Panel</h2>

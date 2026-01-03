@@ -38,24 +38,24 @@ const getStatusColor = (status: string) => {
 
 export const ComplaintStatusCard = () => {
   return (
-    <GlassCard className="h-full bg-white dark:bg-gradient-to-br dark:from-slate-800 dark:to-slate-900 border border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-shadow">
+    <GlassCard className="h-full bg-app-surface border border-app shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-shadow">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500">
           <Activity className="h-5 w-5 text-white" />
         </div>
-        <h3 className="text-lg font-semibold text-gray-900 dark:bg-gradient-to-r dark:from-cyan-400 dark:to-teal-400 dark:bg-clip-text dark:text-transparent">
+        <h3 className="text-lg font-semibold text-foreground">
           Complaint Status
         </h3>
         <div className="ml-auto flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs text-gray-600 dark:text-gray-400">Live</span>
+          <span className="text-xs text-muted-foreground">Live</span>
         </div>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-700/50">
+            <tr className="border-b border-app bg-app-background dark:bg-app-surface/60">
               <th className="text-left text-xs font-medium text-gray-600 dark:text-gray-400 py-3 px-2">
                 ID
               </th>
@@ -77,15 +77,15 @@ export const ComplaintStatusCard = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors"
+                className="border-b border-app hover:bg-app-surface/50 transition-colors"
               >
                 <td className="py-3 px-2 text-sm font-mono text-blue-600 dark:text-blue-400">
                   {complaint.id}
                 </td>
-                <td className="py-3 px-2 text-sm text-gray-900 dark:text-white">
+                <td className="py-3 px-2 text-sm text-foreground dark:text-white">
                   {complaint.name}
                 </td>
-                <td className="py-3 px-2 text-sm text-gray-600 dark:text-gray-400">
+                <td className="py-3 px-2 text-sm text-muted-foreground">
                   {complaint.language}
                 </td>
                 <td className="py-3 px-2">

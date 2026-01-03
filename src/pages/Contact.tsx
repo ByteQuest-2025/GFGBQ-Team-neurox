@@ -64,17 +64,17 @@ const Contact = () => {
 
   return (
     <PageLayout>
-      <section className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950">
+      <section className="py-20 bg-app-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:bg-gradient-to-r dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 dark:bg-clip-text dark:text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
               Get In Touch
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Have questions about NeuroX? Our team is ready to help you protect digital trust.
             </p>
           </motion.div>
@@ -87,23 +87,23 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="lg:col-span-3"
             >
-              <GlassCard className="bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 shadow-sm dark:shadow-lg">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Send us a message</h2>
+              <GlassCard className="bg-app-surface border border-app shadow-sm">
+                <h2 className="text-xl font-semibold text-foreground mb-6">Send us a message</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+                      <label className="text-sm font-medium text-muted-foreground mb-2 block">
                         Full Name *
                       </label>
                       <Input
                         placeholder="John Doe"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                        className="border-app dark:border-app dark:bg-app-surface dark:text-foreground"
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+                      <label className="text-sm font-medium text-muted-foreground mb-2 block">
                         Email Address *
                       </label>
                       <Input
@@ -111,30 +111,30 @@ const Contact = () => {
                         placeholder="john@company.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                        className="border-app dark:border-app dark:bg-app-surface dark:text-foreground"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+                    <label className="text-sm font-medium text-muted-foreground mb-2 block">
                       Subject
                     </label>
                     <Input
                       placeholder="How can we help?"
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                      className="border-app dark:border-app dark:bg-app-surface dark:text-foreground"
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">
+                    <label className="text-sm font-medium text-muted-foreground mb-2 block">
                       Message *
                     </label>
                     <Textarea
                       placeholder="Tell us about your needs..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="min-h-[150px] border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
+                      className="min-h-[150px] border-app dark:border-app dark:bg-app-surface dark:text-foreground"
                     />
                   </div>
                   <Button
@@ -164,29 +164,29 @@ const Contact = () => {
               className="lg:col-span-2 space-y-6"
             >
               {contactInfo.map((item, index) => (
-                <GlassCard
-                  key={index}
-                  className="bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 hover:shadow-md dark:hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-white dark:bg-white border-2 border-white dark:border-white shadow-sm">
-                      <item.icon className="h-5 w-5 text-slate-900" />
+                  <GlassCard
+                    key={index}
+                    className="bg-app-surface border border-app hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-app-surface border-2 border-app shadow-sm">
+                        <item.icon className="h-5 w-5 text-foreground" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-1">{item.title}</p>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="text-foreground hover:opacity-90 transition-opacity font-medium"
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="text-foreground font-medium">{item.value}</p>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{item.title}</p>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-gray-900 dark:text-white font-medium">{item.value}</p>
-                      )}
-                    </div>
-                  </div>
-                </GlassCard>
+                  </GlassCard>
               ))}
 
               <GlassCard className="bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20">

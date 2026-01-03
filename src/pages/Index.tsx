@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <section className="relative py-20 overflow-hidden bg-app-background">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200/20 dark:bg-blue-500/20 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-200/20 dark:bg-cyan-500/20 rounded-full blur-3xl" />
@@ -26,23 +26,18 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-500/20 border border-blue-200 dark:border-blue-500/30 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-app-surface border border-app mb-6"
             >
               <div className="p-1 rounded bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500">
                 <Shield className="h-4 w-4 text-white" />
               </div>
-              <span className="text-sm text-blue-700 dark:text-blue-300 font-medium">
-                AI-Powered Security Platform
-              </span>
+              <span className="text-sm text-muted-foreground font-medium">AI-Powered Security Platform</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:bg-gradient-to-r dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 dark:bg-clip-text dark:text-transparent">
-              Grievance Intake System
-            </h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">Grievance Intake System</h1>
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Advanced AI-driven platform for secure complaint processing, 
-              deepfake detection, and digital trust verification.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Advanced AI-driven platform for secure complaint processing, deepfake detection, and digital trust verification.
             </p>
           </motion.div>
 
@@ -60,14 +55,12 @@ const Index = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md dark:hover:shadow-lg transition-shadow"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-app-surface border border-app shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`p-1.5 rounded bg-gradient-to-r ${item.gradient}`}>
+                <div className={`p-1.5 rounded bg-app-primary`}>
                   <item.icon className="h-4 w-4 text-white" />
                 </div>
-                <span className="text-sm font-medium text-gray-900 dark:text-white">
-                  {item.text}
-                </span>
+                <span className="text-sm font-medium text-foreground">{item.text}</span>
               </div>
             ))}
           </motion.div>

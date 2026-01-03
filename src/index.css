@@ -6,41 +6,49 @@
 
 @layer base {
   :root {
-    /* Light Mode: Professional Blue & Gray */
-    --background: 0 0% 100%;
-    --foreground: 220 13% 20%;
+     /* Light Mode: enforce specified palette
+       Light Primary: #4f46e5 (indigo), secondary blue #2563eb
+       Background: white / #ffffff
+       Text: slate/neutral (#0f172a, #334155)
+     */
+     --background: 0 0% 100%; /* #ffffff */
+     --background-soft: 210 20% 98%; /* #f8fafc fallback */
+     --foreground: 215 30% 10%; /* approx for #0f172a */
+     --foreground-muted: 210 15% 30%; /* approx for #334155 */
 
-    --card: 0 0% 99%;
-    --card-foreground: 220 13% 20%;
+     --card: 0 0% 100%;
+     --card-foreground: 215 30% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 20%;
+     --popover: 0 0% 100%;
+     --popover-foreground: 215 30% 10%;
 
-    --primary: 220 90% 56%;
-    --primary-foreground: 0 0% 100%;
+     /* Primary (indigo) - use H S L numbers so existing hsl(var(--primary)) works */
+     --primary: 249 75% 57%; /* approx for #4f46e5 */
+     --primary-strong: 221 78% 54%; /* approx for #2563eb */
+     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 94% 50%;
-    --secondary-foreground: 0 0% 100%;
+     --secondary: 221 80% 56%;
+     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 13% 70%;
-    --muted-foreground: 220 10% 40%;
+     --muted: 210 14% 92%;
+     --muted-foreground: 210 10% 40%;
 
-    --accent: 202 100% 50%;
-    --accent-foreground: 0 0% 100%;
+     --accent: 202 100% 50%;
+     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+     --destructive: 0 84% 60%;
+     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 90% 88%;
-    --input: 0 0% 100%;
-    --ring: 220 90% 56%;
+     --border: 220 60% 92%; /* light subtle blue/gray */
+     --input: 0 0% 100%;
+     --ring: 249 75% 57%;
 
     --radius: 0.5rem;
 
-    /* Gradient tokens - Light Mode ke liye */
-    --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #0ea5e9 100%);
-    --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-    --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+    /* Gradient tokens - Light Mode ke liye (use approved indigo/blue) */
+    --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+    --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    --gradient-accent: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
     --success: 120 70% 45%;
     --warning: 45 100% 50%;
 
@@ -55,34 +63,37 @@
   }
 
   .dark {
-    /* Dark Mode: Deep Slate with Vibrant Accents - Raat ka theme */
-    --background: 217 33% 6%;
-    --foreground: 210 40% 98%;
-    --card: 217 33% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 10%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 259 80% 65%;
-    --primary-foreground: 217 33% 6%;
-    --secondary: 199 89% 48%;
-    --secondary-foreground: 217 33% 6%;
-    --muted: 217 20% 45%;
-    --muted-foreground: 217 20% 65%;
+    /* Dark Mode: use the specified deep slate palette
+       Background: #0f172a, Surface: #020617, Text: #e5e7eb
+    */
+    --background: 210 30% 6%; /* approx for #0f172a */
+    --surface: 230 40% 2%; /* approx for #020617 */
+    --foreground: 220 10% 92%; /* approx for #e5e7eb */
+    --card: 230 40% 3%;
+    --card-foreground: 220 10% 92%;
+    --popover: 230 40% 3%;
+    --popover-foreground: 220 10% 92%;
+    --primary: 249 75% 57%; /* indigo remains */
+    --primary-foreground: 220 10% 92%;
+    --secondary: 221 78% 54%;
+    --secondary-foreground: 220 10% 92%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 50%;
     --accent: 202 100% 50%;
-    --accent-foreground: 217 33% 6%;
+    --accent-foreground: 220 10% 92%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 70% 28%;
-    --input: 217 33% 15%;
-    --ring: 259 80% 65%;
-    --sidebar-background: 217 33% 8%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 259 80% 65%;
-    --sidebar-primary-foreground: 217 33% 6%;
-    --sidebar-accent: 217 33% 25%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 70% 28%;
-    --sidebar-ring: 259 80% 65%;
+    --border: 220 60% 12%;
+    --input: 230 40% 8%;
+    --ring: 249 75% 57%;
+    --sidebar-background: 210 30% 4%;
+    --sidebar-foreground: 220 10% 92%;
+    --sidebar-primary: 249 75% 57%;
+    --sidebar-primary-foreground: 220 10% 92%;
+    --sidebar-accent: 220 10% 18%;
+    --sidebar-accent-foreground: 220 10% 92%;
+    --sidebar-border: 220 60% 12%;
+    --sidebar-ring: 249 75% 57%;
   }
 }
 
@@ -98,6 +109,16 @@
 }
 
 @layer utilities {
+  /* App-level utilities that map to theme variables */
+  .bg-app-background { background: hsl(var(--background)); }
+  .bg-app-surface { background: hsl(var(--card)); }
+  .text-app-foreground { color: hsl(var(--foreground)); }
+  .text-app-muted { color: hsl(var(--muted-foreground)); }
+  .border-app { border-color: hsl(var(--border)); }
+  .ring-app { box-shadow: 0 0 0 4px hsl(var(--ring) / 0.12); }
+  .bg-app-primary { background: var(--gradient-primary); }
+  .bg-app-primary-solid { background: hsl(var(--primary)); }
+
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-glass-border rounded-2xl;
     box-shadow: 

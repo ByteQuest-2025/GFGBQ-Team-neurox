@@ -19,11 +19,11 @@ export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <motion.nav
+      <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-md"
+        className="fixed top-0 left-0 right-0 z-50 bg-app-background border-b border-app shadow-sm"
     >
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
@@ -43,11 +43,11 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-all duration-200 ${
-                  location.pathname === link.path
-                    ? "text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400"
-                    : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                }`}
+                  className={`text-sm font-medium transition-all duration-200 ${
+                    location.pathname === link.path
+                    ? "text-foreground border-b-2 border-app"
+                    : "text-muted-foreground hover:opacity-90"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -60,7 +60,7 @@ export const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
+                className="rounded-lg hover:bg-app-background/50 dark:hover:bg-app-surface/60"
             >
               {theme === "light" ? (
                 <Moon className="h-5 w-5 text-gray-700" />
@@ -90,7 +90,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-3 pb-3 border-t border-gray-200 dark:border-gray-700 pt-3"
+              className="md:hidden mt-3 pb-3 border-t border-app pt-3"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
@@ -99,9 +99,9 @@ export const Navbar = () => {
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`px-4 py-2 rounded text-sm font-medium transition-all duration-200 ${
-                    location.pathname === link.path
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10"
-                      : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-slate-800"
+                      location.pathname === link.path
+                        ? "text-foreground bg-app-background/50"
+                        : "text-muted-foreground hover:opacity-90 hover:bg-app-surface/50"
                   }`}
                 >
                   {link.name}
