@@ -1,4 +1,3 @@
-
 // This module analyzes an uploaded media file and detects possible deepfake or manipulation signals.
 
 /**
@@ -7,6 +6,7 @@
  * @returns {Array} - List of detected signals with details.
  */
 function detectDeepfakeSignals(mediaFile) {
+    console.log("NeuroX AI Engine is analyzing the media");
     // Placeholder logic for detecting deepfake signals
     const signals = [];
 
