@@ -4,12 +4,13 @@ import { Shield, Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/context/ThemeContext";
+import { useAuth } from "@/context/AuthContext";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Analyze", path: "/analyze" },
   { name: "How It Works", path: "/how-it-works" },
-  { name: "About", path: "/about" },
+  { name: "Track", path: "/track" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -68,6 +69,8 @@ export const Navbar = () => {
                 <Sun className="h-5 w-5 text-yellow-400" />
               )}
             </Button>
+            {/* Auth actions */}
+            <AuthActions />
 
             <Button
               variant="ghost"
@@ -107,10 +110,49 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+                {/* Mobile auth links */}
+                <MobileAuthActions onClick={() => setIsMobileMenuOpen(false)} />
             </div>
           </motion.div>
         )}
       </div>
     </motion.nav>
+  );
+};
+
+const AuthActions = () => {
+  const { user, logout } = useAuth();
+  return user ? (
+    <div className="hidden md:flex items-center gap-3">
+      {user.role === 'admin' && (
+        <Link to="/admin" className="text-sm font-medium text-muted-foreground hover:opacity-90">Admin</Link>
+      )}
+      <Button variant="ghost" size="sm" onClick={logout}>Logout</Button>
+    </div>
+  ) : (
+    <div className="hidden md:flex items-center gap-3">
+      <Link to="/login" className="text-sm font-medium text-muted-foreground hover:opacity-90">Login</Link>
+      <Link to="/register" className="text-sm font-semibold text-foreground">Sign Up</Link>
+    </div>
+  );
+};
+
+const MobileAuthActions = ({ onClick }: { onClick?: () => void }) => {
+  const { user, logout } = useAuth();
+  if (user) {
+    return (
+      <>
+        {user.role === 'admin' && (
+          <Link to="/admin" onClick={onClick} className="px-4 py-2 rounded text-sm font-medium text-muted-foreground">Admin</Link>
+        )}
+        <button onClick={() => { logout(); onClick && onClick(); }} className="px-4 py-2 rounded text-sm font-medium text-muted-foreground">Logout</button>
+      </>
+    );
+  }
+  return (
+    <>
+      <Link to="/login" onClick={onClick} className="px-4 py-2 rounded text-sm font-medium text-muted-foreground">Login</Link>
+      <Link to="/register" onClick={onClick} className="px-4 py-2 rounded text-sm font-semibold text-foreground">Sign Up</Link>
+    </>
   );
 };

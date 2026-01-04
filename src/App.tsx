@@ -13,7 +13,7 @@ import DashboardAdmin from "./pages/DashboardAdmin";
 import Index from "./pages/Index";
 import Analyze from "./pages/Analyze";
 import HowItWorks from "./pages/HowItWorks";
-import About from "./pages/About";
+import Track from "./pages/Track";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -31,7 +31,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/analyze" element={<Analyze />} />
               <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/track" element={<Track />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
