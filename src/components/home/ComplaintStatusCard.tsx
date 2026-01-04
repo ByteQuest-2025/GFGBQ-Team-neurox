@@ -13,26 +13,26 @@ const complaints = [
 const getStatusIcon = (status: string) => {
   switch (status) {
     case "Resolved":
-      return <CheckCircle className="h-4 w-4 text-success" />;
+      return <CheckCircle className="h-4 w-4" />;
     case "Processing":
-      return <Clock className="h-4 w-4 text-warning animate-pulse" />;
+      return <Clock className="h-4 w-4 animate-pulse" />;
     case "Pending":
-      return <AlertTriangle className="h-4 w-4 text-muted-foreground" />;
+      return <AlertTriangle className="h-4 w-4" />;
     default:
       return null;
   }
 };
 
-const getStatusColor = (status: string) => {
+const getStatusClass = (status: string) => {
   switch (status) {
     case "Resolved":
-      return "text-success";
+      return "status-resolved";
     case "Processing":
-      return "text-warning";
+      return "status-in-review";
     case "Pending":
-      return "text-muted-foreground";
+      return "status-submitted";
     default:
-      return "";
+      return "status-submitted";
   }
 };
 
@@ -91,7 +91,7 @@ export const ComplaintStatusCard = () => {
                 <td className="py-3 px-2">
                   <div className="flex items-center gap-2">
                     {getStatusIcon(complaint.status)}
-                    <span className={`text-sm ${getStatusColor(complaint.status)}`}>
+                    <span className={`status-badge ${getStatusClass(complaint.status)}`}>
                       {complaint.status}
                     </span>
                   </div>

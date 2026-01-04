@@ -119,6 +119,14 @@
   .bg-app-primary { background: var(--gradient-primary); }
   .bg-app-primary-solid { background: hsl(var(--primary)); }
 
+  /* Grievance status badges mapped to theme variables */
+  .status-badge {
+    @apply inline-flex items-center gap-2 px-2 py-0.5 text-xs font-medium rounded-full;
+  }
+  .status-submitted { background: color-mix(in srgb, hsl(var(--warning)) 12%, transparent); color: hsl(var(--warning)); }
+  .status-in-review { background: color-mix(in srgb, hsl(var(--primary)) 12%, transparent); color: hsl(var(--primary)); }
+  .status-resolved { background: color-mix(in srgb, hsl(var(--success)) 12%, transparent); color: hsl(var(--success)); }
+
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-glass-border rounded-2xl;
     box-shadow: 
